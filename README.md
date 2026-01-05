@@ -1,6 +1,7 @@
 # Karyo 🛒
 
 A modern, full-featured e-commerce platform built with Angular 21, featuring reactive state management with signals, responsive design, and comprehensive user authentication.
+
 Wbsite Link: https://karyoonline.vercel.app/
 
 ![Angular](https://img.shields.io/badge/Angular-21-DD0031?style=for-the-badge&logo=angular&logoColor=white)
