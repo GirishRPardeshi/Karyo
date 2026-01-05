@@ -1,0 +1,97 @@
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <ng-container>
+
+    <!-- Empty Cart State -->
+    <div class="text-center py-16" *ngIf="cartItems().length === 0">
+      <div class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+        <span class="material-symbols-outlined text-4xl text-gray-400">shopping_cart_off</span>
+      </div>
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Your cart is empty</h2>
+      <p class="text-gray-600 mb-8">Looks like you haven't added anything to your cart yet.</p>
+      <div class="space-x-4">
+        <a routerLink="/" class="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold px-8 py-3 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300">Continue Shopping</a>
+        <a routerLink="/orders" class="inline-block bg-gray-100 text-gray-900 font-semibold px-8 py-3 rounded-lg hover:bg-gray-200 transition-colors">View Order History</a>
+      </div>
+    </div>
+
+    <!-- Cart Content -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8" *ngIf="cartItems().length > 0">
+
+      <!-- Left Column: Cart Items -->
+      <div class="lg:col-span-2 space-y-6">
+        <div class="bg-white rounded-xl shadow-lg p-6">
+          <h2 class="text-2xl font-bold text-gray-900 mb-6">Shopping Cart ({{ totalItems() }} items)</h2>
+
+          <div class="space-y-6">
+            <div class="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg" *ngFor="let item of cartItems()">
+              <div class="w-20 h-20 bg-gray-200 rounded-lg overflow-hidden flex-shrink-0">
+                <img [src]="item.image || 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=80&h=80&fit=crop'" [alt]="item.name" class="w-full h-full object-cover">
+              </div>
+
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-gray-900 mb-1">{{ item.name }}</h3>
+                <p class="text-gray-600 mb-2">₹{{ item.price | number }}</p>
+                <p class="text-green-600 text-sm font-medium">In Stock</p>
+              </div>
+
+              <div class="flex items-center space-x-4">
+                <div class="flex items-center border border-gray-300 rounded-lg">
+                  <button (click)="decreaseQty(item.id)" [disabled]="item.quantity <= 1"
+                          class="px-3 py-1 text-gray-600 hover:text-gray-900 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed">-</button>
+                  <span class="px-3 py-1 border-x border-gray-300">{{ item.quantity }}</span>
+                  <button (click)="increaseQty(item.id)"
+                          class="px-3 py-1 text-gray-600 hover:text-gray-900 hover:bg-gray-100">+</button>
+                </div>
+
+                <button class="text-red-600 hover:text-red-800 transition-colors" (click)="removeItem(item.id)">
+                  <span class="material-symbols-outlined">delete</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Price Details -->
+      <div class="lg:col-span-1">
+        <div class="bg-white rounded-xl shadow-lg p-6 sticky top-24">
+          <h3 class="text-xl font-bold text-gray-900 mb-6">Price Details</h3>
+
+          <div class="space-y-4">
+            <div class="flex justify-between text-gray-600">
+              <span>Price ({{ totalItems() }} items)</span>
+              <span>₹{{ totalAmount() | number }}</span>
+            </div>
+
+            <div class="flex justify-between text-green-600">
+              <span>Discount</span>
+              <span>- ₹0</span>
+            </div>
+
+            <div class="flex justify-between text-green-600">
+              <span>Delivery Charges</span>
+              <span>FREE</span>
+            </div>
+
+            <hr class="border-gray-200">
+
+            <div class="flex justify-between text-xl font-bold text-gray-900">
+              <span>Total Amount</span>
+              <span>₹{{ totalAmount() | number }}</span>
+            </div>
+
+            <button class="w-full bg-gradient-to-r from-green-600 to-blue-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-green-700 hover:to-blue-700 transition-all duration-300" routerLink="/checkout">
+              Place Order
+            </button>
+
+            <div class="flex items-center justify-center space-x-2 text-gray-600 text-sm mt-4">
+              <span class="material-symbols-outlined text-green-600">security</span>
+              <span>Safe and Secure Payments. 100% Authentic products.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </ng-container>
+</div>

@@ -1,0 +1,151 @@
+/* Header Base */
+.navbar {
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0.75rem 0;
+  font-family: 'Outfit', sans-serif;
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2563eb; /* Primary Blue */
+  text-decoration: none;
+  letter-spacing: -0.025em;
+}
+
+.logo-icon {
+  font-size: 2rem;
+  font-variation-settings: 'FILL' 1;
+}
+
+/* Search Bar */
+.search-bar {
+  flex: 1;
+  max-width: 600px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 3rem;
+  border-radius: 9999px; /* Pill shape */
+  border: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: #2563eb;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.search-btn {
+  position: absolute;
+  left: 0.5rem;
+  background: none;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Navigation */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #475569;
+  font-size: 0.8rem;
+  font-weight: 500;
+  gap: 0.25rem;
+  transition: color 0.2s ease;
+  min-width: 3.5rem;
+}
+
+.nav-item:hover, .nav-item.active {
+  color: #2563eb;
+}
+
+.nav-item .material-symbols-outlined {
+  font-size: 1.5rem;
+}
+
+/* Cart Badge */
+.icon-wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+.badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #ef4444; /* Danger Red */
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  height: 1.25rem;
+  min-width: 1.25rem;
+  padding: 0 0.35rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+}
+
+/* Mobile Menu */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #334155;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .search-bar {
+    display: none; /* Hide on small screens for now */
+  }
+  
+  .nav-links span:not(.material-symbols-outlined) {
+    display: none; /* Hide text labels on mobile */
+  }
+
+  .nav-item {
+    min-width: auto;
+  }
+}

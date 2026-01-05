@@ -1,0 +1,136 @@
+.orders-page {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    min-height: 80vh;
+}
+
+.orders-page h2 {
+    margin-bottom: 2rem;
+    color: #1e293b;
+}
+
+.no-orders {
+    text-align: center;
+    color: #64748b;
+    margin-top: 4rem;
+}
+
+.order-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
+
+.order-header {
+    padding: 1rem 1.5rem;
+    background: #f8fafc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.order-id {
+    font-weight: 600;
+    color: #334155;
+    margin-right: 1rem;
+}
+
+.order-date {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.delete-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+
+.delete-btn:hover {
+    background: #c82333;
+}
+
+.order-status.processing {
+    background: #fff7ed;
+    color: #ea580c;
+    border: 1px solid #fed7aa;
+}
+
+.order-status.shipped {
+    background: #eff6ff;
+    color: #2563eb;
+    border: 1px solid #bfdbfe;
+}
+
+.order-status.delivered {
+    background: #f0fdf4;
+    color: #16a34a;
+    border: 1px solid #bbf7d0;
+}
+
+.order-items {
+    padding: 1.5rem;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.order-item:last-child {
+    margin-bottom: 0;
+}
+
+.item-thumb {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-right: 1rem;
+    border: 1px solid #f1f5f9;
+    border-radius: 4px;
+}
+
+.item-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.item-qty {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.item-price {
+    font-weight: 500;
+    color: #0f172a;
+}
+
+.order-footer {
+    padding: 1rem 1.5rem;
+    background: #fff;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-label {
+    font-weight: 500;
+    color: #64748b;
+}
+
+.total-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0f172a;
+}

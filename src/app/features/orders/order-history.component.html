@@ -1,0 +1,40 @@
+<div class="container orders-page">
+    <h2>My Orders</h2>
+
+    <ng-container *ngIf="orders$ | async as orders">
+        <div *ngIf="orders.length === 0" class="no-orders">
+            <p>No orders placed yet.</p>
+        </div>
+
+        <div class="order-list" *ngIf="orders.length > 0">
+            <div class="order-card" *ngFor="let order of orders">
+                <div class="order-header">
+                    <div>
+                        <span class="order-id">Order #{{ order.id }}</span>
+                        <span class="order-date">{{ order.date | date:'medium' }}</span>
+                    </div>
+                    <div>
+                        <span class="order-status {{ order.status.toLowerCase() }}">{{ order.status }}</span>
+                        <button class="delete-btn" (click)="deleteOrder(order.id)">Delete</button>
+                    </div>
+                </div>
+
+                <div class="order-items">
+                    <div class="order-item" *ngFor="let item of order.items">
+                        <img [src]="item.image || 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=80&h=80&fit=crop'" class="item-thumb">
+                        <div class="item-info">
+                            <span>{{ item.name }}</span>
+                            <span class="item-qty">Qty: {{ item.quantity }}</span>
+                        </div>
+                        <span class="item-price">₹{{ item.price * item.quantity }}</span>
+                    </div>
+                </div>
+
+                <div class="order-footer">
+                    <span class="total-label">Total Amount</span>
+                    <span class="total-value">₹{{ order.total | number }}</span>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>

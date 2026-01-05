@@ -1,0 +1,157 @@
+<!-- Product Details Page -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" *ngIf="product(); else loading">
+
+  <!-- Breadcrumb -->
+  <nav class="flex items-center space-x-2 text-sm text-gray-600 mb-8">
+    <a routerLink="/" class="hover:text-blue-600 transition-colors">Home</a>
+    <span class="text-gray-400">/</span>
+    <a routerLink="/products" class="hover:text-blue-600 transition-colors">Products</a>
+    <span class="text-gray-400">/</span>
+    <span class="text-gray-900 font-medium">{{ product()?.title }}</span>
+  </nav>
+
+  <!-- Main Section -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+
+    <!-- Images -->
+    <div class="space-y-4">
+      <div class="aspect-square bg-gray-100 rounded-xl overflow-hidden">
+        <img
+          class="w-full h-full object-cover"
+          [src]="product()?.thumbnail || product()?.image || 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=600&fit=crop'"
+          [alt]="product()?.title"
+        />
+      </div>
+
+      <div class="grid grid-cols-4 gap-4" *ngIf="product()?.images?.length">
+        <div class="aspect-square bg-gray-100 rounded-lg overflow-hidden cursor-pointer hover:opacity-80 transition-opacity" *ngFor="let img of product()?.images; trackBy: trackByImage">
+          <img [src]="img" [alt]="product()?.title" class="w-full h-full object-cover" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Info -->
+    <div class="space-y-6">
+      <div>
+        <h1 class="text-3xl font-bold text-gray-900 mb-2">{{ product()?.title }}</h1>
+        <p class="text-lg text-gray-600">Category: {{ product()?.category | titlecase }}</p>
+      </div>
+
+      <div class="flex items-center space-x-4" *ngIf="product()?.rating">
+        <div class="flex text-yellow-400">
+          <span class="material-symbols-outlined" *ngFor="let star of [1,2,3,4,5]; let i = index" [class.text-gray-300]="i >= (product()?.rating?.rate || 0)">star</span>
+        </div>
+        <span class="text-gray-600">({{ product()?.rating?.count }} reviews)</span>
+      </div>
+
+      <div class="flex items-center space-x-4">
+        <span class="text-4xl font-bold text-gray-900">₹{{ product()?.price | number }}</span>
+        <span class="text-xl text-gray-500 line-through" *ngIf="product()?.discountPercentage">
+          ₹{{ ((product()?.price || 0) * 100 / (100 - (product()?.discountPercentage || 0))) | number:'1.0-0' }}
+        </span>
+        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-semibold" *ngIf="product()?.discountPercentage">
+          {{ product()?.discountPercentage }}% OFF
+        </span>
+      </div>
+
+      <div class="flex items-center space-x-2">
+        <span class="w-3 h-3 rounded-full" [class.bg-green-500]="(product()?.stock || 0) > 10" [class.bg-yellow-500]="(product()?.stock || 0) > 0 && (product()?.stock || 0) <= 10" [class.bg-red-500]="(product()?.stock || 0) === 0"></span>
+        <span class="text-gray-700" [class.text-green-700]="(product()?.stock || 0) > 10" [class.text-yellow-700]="(product()?.stock || 0) > 0 && (product()?.stock || 0) <= 10" [class.text-red-700]="(product()?.stock || 0) === 0">
+          {{ (product()?.stock || 0) > 10 ? 'In Stock' : (product()?.stock || 0) > 0 ? 'Low Stock' : 'Out of Stock' }}
+        </span>
+      </div>
+
+      <p class="text-gray-700 leading-relaxed">{{ product()?.description }}</p>
+
+      <!-- Actions -->
+      <div class="space-y-4">
+        <button type="button" (click)="addToCart()"
+                class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-4 px-6 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                [disabled]="product()?.stock === 0">
+          <span class="flex items-center justify-center space-x-2">
+            <span class="material-symbols-outlined">shopping_cart</span>
+            <span>Add to Cart</span>
+          </span>
+        </button>
+
+        <div class="grid grid-cols-2 gap-4">
+          <button class="flex items-center justify-center space-x-2 bg-gray-100 text-gray-900 py-3 px-4 rounded-lg hover:bg-gray-200 transition-colors">
+            <span class="material-symbols-outlined">favorite</span>
+            <span>Wishlist</span>
+          </button>
+          <button class="flex items-center justify-center space-x-2 bg-gray-100 text-gray-900 py-3 px-4 rounded-lg hover:bg-gray-200 transition-colors">
+            <span class="material-symbols-outlined">share</span>
+            <span>Share</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Details -->
+  <div class="bg-gray-50 rounded-xl p-8 mb-16">
+    <h2 class="text-2xl font-bold text-gray-900 mb-6">Product Details</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="space-y-3">
+        <div class="flex justify-between">
+          <span class="font-medium text-gray-700">Brand:</span>
+          <span class="text-gray-900">{{ product()?.brand || 'N/A' }}</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="font-medium text-gray-700">SKU:</span>
+          <span class="text-gray-900">{{ product()?.sku || 'N/A' }}</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="font-medium text-gray-700">Warranty:</span>
+          <span class="text-gray-900">{{ product()?.warrantyInformation || 'N/A' }}</span>
+        </div>
+      </div>
+      <div class="space-y-3">
+        <div class="flex justify-between">
+          <span class="font-medium text-gray-700">Return Policy:</span>
+          <span class="text-gray-900">{{ product()?.returnPolicy || 'N/A' }}</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="font-medium text-gray-700">Shipping:</span>
+          <span class="text-gray-900">{{ product()?.shippingInformation || 'N/A' }}</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="font-medium text-gray-700">Min. Order:</span>
+          <span class="text-gray-900">{{ product()?.minimumOrderQuantity || 'N/A' }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reviews -->
+  <div class="bg-white rounded-xl shadow-lg p-8" *ngIf="product()?.reviews?.length">
+    <h2 class="text-2xl font-bold text-gray-900 mb-6">Customer Reviews</h2>
+    <div class="space-y-6">
+      <div class="border-b border-gray-200 pb-6" *ngFor="let review of product()?.reviews">
+        <div class="flex items-center space-x-2 mb-2">
+          <div class="flex text-yellow-400">
+            <span class="material-symbols-outlined text-sm" *ngFor="let star of [1,2,3,4,5]; let i = index" [class.text-gray-300]="i >= review.rating">star</span>
+          </div>
+          <span class="text-sm text-gray-600">by {{ review.reviewerName }}</span>
+        </div>
+        <p class="text-gray-700">{{ review.comment }}</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Loading -->
+<ng-template #loading>
+  <div class="flex justify-center items-center py-16">
+    <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900"></div>
+    <span class="ml-4 text-gray-600">Loading product details...</span>
+  </div>
+</ng-template>
+
+<ng-template #loading>
+  <div class="flex justify-center items-center py-16">
+    <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900"></div>
+    <span class="ml-4 text-gray-600">Loading product details...</span>
+  </div>
+</ng-template>

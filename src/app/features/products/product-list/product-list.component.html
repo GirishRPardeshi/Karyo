@@ -1,0 +1,103 @@
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <div class="flex flex-col lg:flex-row gap-8">
+
+    <!-- Filters Sidebar -->
+    <aside class="lg:w-1/4">
+      <div class="bg-white rounded-xl shadow-lg p-6 sticky top-24">
+        <div class="flex items-center justify-between mb-6">
+          <h3 class="text-xl font-bold text-gray-900">Filters</h3>
+          <button *ngIf="hasActiveFilters()" (click)="clearAllFilters()" class="text-sm text-blue-600 hover:text-blue-800 font-medium underline">
+            Clear All
+          </button>
+        </div>
+
+        <div class="space-y-6">
+          <div class="filter-group">
+            <h4 class="text-lg font-semibold text-gray-900 mb-3">Category</h4>
+            <div class="space-y-2">
+              <label class="flex items-center">
+                <input type="checkbox" (change)="onCategoryChange('mobiles', $event.target.checked)" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                <span class="ml-2 text-gray-700">Mobiles</span>
+              </label>
+              <label class="flex items-center">
+                <input type="checkbox" (change)="onCategoryChange('laptops', $event.target.checked)" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                <span class="ml-2 text-gray-700">Laptops</span>
+              </label>
+              <label class="flex items-center">
+                <input type="checkbox" (change)="onCategoryChange('fashion', $event.target.checked)" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                <span class="ml-2 text-gray-700">Fashion</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h4 class="text-lg font-semibold text-gray-900 mb-3">Price Range</h4>
+            <div class="space-y-2">
+              <label class="flex items-center">
+                <input type="radio" name="price" value="under10000" (change)="onPriceChange('under10000')" class="border-gray-300 text-blue-600 focus:ring-blue-500">
+                <span class="ml-2 text-gray-700">Under ₹10,000</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="price" value="10000-50000" (change)="onPriceChange('10000-50000')" class="border-gray-300 text-blue-600 focus:ring-blue-500">
+                <span class="ml-2 text-gray-700">₹10,000 - ₹50,000</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="price" value="over50000" (change)="onPriceChange('over50000')" class="border-gray-300 text-blue-600 focus:ring-blue-500">
+                <span class="ml-2 text-gray-700">Over ₹50,000</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Product Grid -->
+    <section class="lg:w-3/4">
+      <div *ngIf="isLoading()" class="flex justify-center items-center py-12">
+        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900"></div>
+        <span class="ml-4 text-gray-600">Loading products...</span>
+      </div>
+
+      <div *ngIf="!isLoading() && products().length === 0" class="text-center py-12">
+        <span class="text-gray-500">No products found matching your criteria.</span>
+      </div>
+
+      <div *ngIf="!isLoading() && products().length > 0" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <div *ngFor="let product of products()" class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:scale-105 cursor-pointer" [routerLink]="['/products', product.id]">
+          <div class="relative">
+            <img [src]="product.image || product.thumbnail || product.images[0] || 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=300&h=300&fit=crop'" [alt]="product.title" class="w-full h-64 object-cover">
+            <button class="absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-gray-100 transition-colors" (click)="$event.stopPropagation()">
+              <span class="material-symbols-outlined text-gray-600 text-sm">favorite</span>
+            </button>
+            <div class="absolute top-3 left-3 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-semibold" *ngIf="product.discountPercentage">
+              {{ product.discountPercentage }}% OFF
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2 line-clamp-2" [title]="product.title">{{ product.title }}</h3>
+
+            <div class="flex items-center mb-3" *ngIf="product.rating">
+              <div class="flex text-yellow-400">
+                <span class="material-symbols-outlined text-sm" *ngFor="let star of [1,2,3,4,5]; let i = index" [class.text-gray-300]="i >= (product.rating.rate || 0)">star</span>
+              </div>
+              <span class="text-sm text-gray-600 ml-2">({{ product.rating.count }})</span>
+            </div>
+
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <span class="text-2xl font-bold text-gray-900">₹{{ product.price | number }}</span>
+                <span class="text-sm text-gray-500 line-through ml-2" *ngIf="product.discountPercentage">
+                  ₹{{ (product.price * 100 / (100 - product.discountPercentage)) | number:'1.0-0' }}
+                </span>
+              </div>
+            </div>
+
+            <button class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-2 px-4 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300" (click)="addToCart(product, $event)">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

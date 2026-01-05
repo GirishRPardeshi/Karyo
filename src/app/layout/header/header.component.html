@@ -1,0 +1,69 @@
+<header class="bg-gradient-to-r from-gray-900 via-gray-800 to-black shadow-2xl sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+
+            <!-- Logo -->
+            <a routerLink="/" class="flex items-center space-x-2 text-white font-bold text-2xl hover:text-gray-300 transition-colors">
+                <span class="material-symbols-outlined text-3xl">shopping_bag</span>
+                <span>Karyo</span>
+            </a>
+
+            <!-- Search Bar -->
+            <div class="flex-1 max-w-lg mx-8">
+                <div class="relative">
+                    <input type="text" placeholder="Search for products, brands and more" (input)="onSearch($event)"
+                           class="w-full pl-4 pr-12 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent">
+                    <button class="absolute right-2 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300">
+                        <span class="material-symbols-outlined">search</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="hidden md:flex items-center space-x-6">
+                <a routerLink="/" routerLinkActive="text-white" class="flex items-center space-x-1 text-gray-300 hover:text-white transition-colors">
+                    <span class="material-symbols-outlined">home</span>
+                    <span>Home</span>
+                </a>
+
+                <!-- Authenticated User Menu -->
+                <div *ngIf="isAuthenticated(); else guestMenu" class="flex items-center space-x-4">
+                    <span class="text-gray-300">Welcome, {{ currentUser()?.name }}</span>
+                    <a routerLink="/orders" routerLinkActive="text-white" class="flex items-center space-x-1 text-gray-300 hover:text-white transition-colors">
+                        <span class="material-symbols-outlined">receipt</span>
+                        <span>Orders</span>
+                    </a>
+                    <button (click)="logout()" class="flex items-center space-x-1 text-gray-300 hover:text-white transition-colors">
+                        <span class="material-symbols-outlined">logout</span>
+                        <span>Logout</span>
+                    </button>
+                </div>
+
+                <!-- Guest Menu -->
+                <ng-template #guestMenu>
+                    <a routerLink="/login" routerLinkActive="text-white" class="flex items-center space-x-1 text-gray-300 hover:text-white transition-colors">
+                        <span class="material-symbols-outlined">account_circle</span>
+                        <span>Login</span>
+                    </a>
+                    <!-- <a routerLink="/signup" routerLinkActive="text-white" class="flex items-center space-x-1 text-gray-300 hover:text-white transition-colors">
+                        <span class="material-symbols-outlined">person_add</span>
+                        <span>Sign Up</span>
+                    </a> -->
+                </ng-template>
+
+                <a routerLink="/cart" routerLinkActive="text-white" class="relative flex items-center space-x-1 text-gray-300 hover:text-white transition-colors">
+                    <div class="relative">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                        <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center" *ngIf="cartItemCount() > 0">{{ cartItemCount() }}</span>
+                    </div>
+                    <span>Cart</span>
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden text-white">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </div>
+</header>

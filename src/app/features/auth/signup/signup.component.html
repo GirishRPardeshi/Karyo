@@ -1,0 +1,31 @@
+<div class="signup-container">
+  <h2>Sign Up for karyo</h2>
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="signup-form">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" formControlName="name" required>
+      <div *ngIf="signupForm.get('name')?.invalid && signupForm.get('name')?.touched" class="error">
+        Name is required and must be at least 2 characters.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" formControlName="email" required>
+      <div *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched" class="error">
+        Please enter a valid email.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" formControlName="password" required>
+      <div *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched" class="error">
+        Password is required and must be at least 6 characters.
+      </div>
+    </div>
+    <button type="submit" class="signup-btn" [disabled]="isLoading">
+      {{ isLoading ? 'Signing Up...' : 'Sign Up' }}
+    </button>
+    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+  </form>
+  <p>Already have an account? <a routerLink="/login">Login</a></p>
+</div>

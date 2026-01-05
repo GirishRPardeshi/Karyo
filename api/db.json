@@ -1,0 +1,571 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Apple iPhone 15 Pro Max",
+      "price": 159900,
+      "description": "Titanium design, A17 Pro chip, 48MP Main camera, USB-C. The ultimate iPhone.",
+      "category": "mobiles",
+      "image": "https://m.media-amazon.com/images/I/81CgtwSII3L._SX679_.jpg",
+      "rating": {
+        "rate": 4.8,
+        "count": 500
+      },
+      "discountPercentage": 5,
+      "images": [
+        "https://m.media-amazon.com/images/I/81CgtwSII3L._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/61f4dTush1L._SX679_.jpg"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Samsung Galaxy S24 Ultra",
+      "price": 129999,
+      "description": "Galaxy AI is here. Welcome to the era of mobile AI. With standard Titanium Frame.",
+      "category": "mobiles",
+      "image": "https://m.media-amazon.com/images/I/71CXhVhpM0L._SX679_.jpg",
+      "rating": {
+        "rate": 4.7,
+        "count": 320
+      },
+      "discountPercentage": 8,
+      "images": [
+        "https://m.media-amazon.com/images/I/71CXhVhpM0L._SX679_.jpg"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "OnePlus 12",
+      "price": 64999,
+      "description": "Smooth Beyond Belief. Snapdragon 8 Gen 3, 4th Gen Hasselblad Camera System.",
+      "category": "mobiles",
+      "image": "https://m.media-amazon.com/images/I/717Qo4MH97L._SX679_.jpg",
+      "rating": {
+        "rate": 4.5,
+        "count": 890
+      },
+      "discountPercentage": 10,
+      "images": [
+        "https://m.media-amazon.com/images/I/717Qo4MH97L._SX679_.jpg"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Google Pixel 8 Pro",
+      "price": 99999,
+      "description": "The most powerful Pixel yet, with Gemini Nano built in.",
+      "category": "mobiles",
+      "image": "https://m.media-amazon.com/images/I/7123j2j-T8L._SX679_.jpg",
+      "rating": {
+        "rate": 4.4,
+        "count": 150
+      },
+      "discountPercentage": 12,
+      "images": [
+        "https://m.media-amazon.com/images/I/7123j2j-T8L._SX679_.jpg"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Xiaomi 14 Ultra",
+      "price": 99999,
+      "description": "Leica Summilux lens, Snapdragon 8 Gen 3, 2K LTPO display.",
+      "category": "mobiles",
+      "image": "https://m.media-amazon.com/images/I/7123j2j-T8L._SX679_.jpg",
+      "rating": {
+        "rate": 4.6,
+        "count": 210
+      },
+      "discountPercentage": 5,
+      "images": [
+        "https://m.media-amazon.com/images/I/7123j2j-T8L._SX679_.jpg"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Samsung Galaxy A55 5G",
+      "price": 39999,
+      "description": "Awesome durability. Awesome camera. Awesome battery.",
+      "category": "mobiles",
+      "image": "https://m.media-amazon.com/images/I/71lD7eGdW-L._SX679_.jpg",
+      "rating": {
+        "rate": 4.3,
+        "count": 1200
+      },
+      "discountPercentage": 15,
+      "images": [
+        "https://m.media-amazon.com/images/I/71lD7eGdW-L._SX679_.jpg"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Nothing Phone (2a)",
+      "price": 23999,
+      "description": "Uniquely designed. Powerful performance. Clean OS.",
+      "category": "mobiles",
+      "image": "https://m.media-amazon.com/images/I/71L5lEfJ2EL._SX679_.jpg",
+      "rating": {
+        "rate": 4.5,
+        "count": 850
+      },
+      "discountPercentage": 0,
+      "images": [
+        "https://m.media-amazon.com/images/I/71L5lEfJ2EL._SX679_.jpg"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Realme 12 Pro+ 5G",
+      "price": 29999,
+      "description": "Periscope Portrait Camera. Luxury Watch Design.",
+      "category": "mobiles",
+      "image": "https://m.media-amazon.com/images/I/71-Ox-hQGFL._SX679_.jpg",
+      "rating": {
+        "rate": 4.4,
+        "count": 600
+      },
+      "discountPercentage": 10,
+      "images": [
+        "https://m.media-amazon.com/images/I/71-Ox-hQGFL._SX679_.jpg"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Poco X6 Pro",
+      "price": 26999,
+      "description": "Dimensity 8300-Ultra. 1.5K CrystalRes AMOLED.",
+      "category": "mobiles",
+      "image": "https://m.media-amazon.com/images/I/51Zl+gXfWlL._SX679_.jpg",
+      "rating": {
+        "rate": 4.2,
+        "count": 900
+      },
+      "discountPercentage": 12,
+      "images": [
+        "https://m.media-amazon.com/images/I/51Zl+gXfWlL._SX679_.jpg"
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Redmi Note 13 Pro+",
+      "price": 31999,
+      "description": "Super clear 200MP camera. 120W HyperCharge.",
+      "category": "mobiles",
+      "image": "https://m.media-amazon.com/images/I/71XN-S-p1rL._SX679_.jpg",
+      "rating": {
+        "rate": 4.3,
+        "count": 750
+      },
+      "discountPercentage": 8,
+      "images": [
+        "https://m.media-amazon.com/images/I/71XN-S-p1rL._SX679_.jpg"
+      ]
+    },
+    {
+      "id": 11,
+      "title": "MacBook Air M3",
+      "price": 114900,
+      "description": "Lean. Mean. M3 machine. Super portable 13-inch laptop.",
+      "category": "laptops",
+      "image": "https://m.media-amazon.com/images/I/71jG+e7roXL._SX679_.jpg",
+      "rating": {
+        "rate": 4.9,
+        "count": 120
+      },
+      "discountPercentage": 5,
+      "images": [
+        "https://m.media-amazon.com/images/I/71jG+e7roXL._SX679_.jpg"
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Dell XPS 13",
+      "price": 145000,
+      "description": "Iconic design. Crafted with machined aluminum and carbon fiber.",
+      "category": "laptops",
+      "image": "https://m.media-amazon.com/images/I/61s82lJ7oPL._SX679_.jpg",
+      "rating": {
+        "rate": 4.6,
+        "count": 80
+      },
+      "discountPercentage": 10,
+      "images": [
+        "https://m.media-amazon.com/images/I/61s82lJ7oPL._SX679_.jpg"
+      ]
+    },
+    {
+      "id": 13,
+      "title": "HP Spectre x360",
+      "price": 139999,
+      "description": "2-in-1 Laptop with AI-built in technology.",
+      "category": "laptops",
+      "image": "https://m.media-amazon.com/images/I/715E2o+6aCL._SX679_.jpg",
+      "rating": {
+        "rate": 4.7,
+        "count": 95
+      },
+      "discountPercentage": 12,
+      "images": [
+        "https://m.media-amazon.com/images/I/715E2o+6aCL._SX679_.jpg"
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Asus ROG Zephyrus G14",
+      "price": 155000,
+      "description": "The world's most powerful 14-inch gaming laptop.",
+      "category": "laptops",
+      "image": "https://m.media-amazon.com/images/I/71N1+gK+4LL._SX679_.jpg",
+      "rating": {
+        "rate": 4.8,
+        "count": 200
+      },
+      "discountPercentage": 15,
+      "images": [
+        "https://m.media-amazon.com/images/I/71N1+gK+4LL._SX679_.jpg"
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Lenovo Yoga 9i",
+      "price": 160000,
+      "description": "Shape your creativity with the 2-in-1 convertible design.",
+      "category": "laptops",
+      "image": "https://m.media-amazon.com/images/I/61Wd3d1+J-L._SX679_.jpg",
+      "rating": {
+        "rate": 4.5,
+        "count": 45
+      },
+      "discountPercentage": 5,
+      "images": [
+        "https://m.media-amazon.com/images/I/61Wd3d1+J-L._SX679_.jpg"
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Sony WH-1000XM5",
+      "price": 26990,
+      "description": "Industry leading noise cancellation for distraction-free listening.",
+      "category": "electronics",
+      "image": "https://m.media-amazon.com/images/I/61vJtKbAssL._SX679_.jpg",
+      "rating": {
+        "rate": 4.5,
+        "count": 2300
+      },
+      "discountPercentage": 18,
+      "images": [
+        "https://m.media-amazon.com/images/I/61vJtKbAssL._SX679_.jpg"
+      ]
+    },
+    {
+      "id": 17,
+      "title": "JBL Flip 6",
+      "price": 11999,
+      "description": "Bold sound for every adventure. Waterproof and dustproof.",
+      "category": "electronics",
+      "image": "https://m.media-amazon.com/images/I/71J15XgK+IL._SX679_.jpg",
+      "rating": {
+        "rate": 4.4,
+        "count": 5000
+      },
+      "discountPercentage": 20,
+      "images": [
+        "https://m.media-amazon.com/images/I/71J15XgK+IL._SX679_.jpg"
+      ]
+    },
+    {
+      "id": 18,
+      "title": "Apple Watch Series 9",
+      "price": 41900,
+      "description": "Smarter. Brighter. Mightier.",
+      "category": "electronics",
+      "image": "https://m.media-amazon.com/images/I/71XMTLtZd5L._SX679_.jpg",
+      "rating": {
+        "rate": 4.7,
+        "count": 1000
+      },
+      "discountPercentage": 10,
+      "images": [
+        "https://m.media-amazon.com/images/I/71XMTLtZd5L._SX679_.jpg"
+      ]
+    },
+    {
+      "id": 19,
+      "title": "Sony PlayStation 5",
+      "price": 54990,
+      "description": "Play Has No Limits. Lightning fast loading with high-speed SSD.",
+      "category": "electronics",
+      "image": "https://m.media-amazon.com/images/I/510-+ueK6rL._SX679_.jpg",
+      "rating": {
+        "rate": 4.9,
+        "count": 3000
+      },
+      "discountPercentage": 5,
+      "images": [
+        "https://m.media-amazon.com/images/I/510-+ueK6rL._SX679_.jpg"
+      ]
+    },
+    {
+      "id": 20,
+      "title": "GoPro HERO12 Black",
+      "price": 37990,
+      "description": "Incredible image quality, even better HyperSmooth video stabilization.",
+      "category": "electronics",
+      "image": "https://m.media-amazon.com/images/I/61xF-b+L+0L._SX679_.jpg",
+      "rating": {
+        "rate": 4.6,
+        "count": 450
+      },
+      "discountPercentage": 15,
+      "images": [
+        "https://m.media-amazon.com/images/I/61xF-b+L+0L._SX679_.jpg"
+      ]
+    },
+    {
+      "id": 21,
+      "title": "Men's Casual Shirt",
+      "price": 1499,
+      "description": "Cotton blend, regular fit casual shirt for men.",
+      "category": "fashion",
+      "image": "https://m.media-amazon.com/images/I/71O1QaI-sbL._SY741_.jpg",
+      "rating": {
+        "rate": 4.1,
+        "count": 230
+      },
+      "discountPercentage": 40,
+      "images": [
+        "https://m.media-amazon.com/images/I/71O1QaI-sbL._SY741_.jpg"
+      ]
+    },
+    {
+      "id": 22,
+      "title": "Women's Floral Dress",
+      "price": 2499,
+      "description": "Beautiful floral print maxi dress.",
+      "category": "fashion",
+      "image": "https://m.media-amazon.com/images/I/61SgAdW8z7L._SY741_.jpg",
+      "rating": {
+        "rate": 4.3,
+        "count": 150
+      },
+      "discountPercentage": 30,
+      "images": [
+        "https://m.media-amazon.com/images/I/61SgAdW8z7L._SY741_.jpg"
+      ]
+    },
+    {
+      "id": 23,
+      "title": "Puma Men's Sneakers",
+      "price": 3999,
+      "description": "Stylish and comfortable sneakers for everyday wear.",
+      "category": "fashion",
+      "image": "https://m.media-amazon.com/images/I/71+0H-7-l8L._SY695_.jpg",
+      "rating": {
+        "rate": 4.4,
+        "count": 890
+      },
+      "discountPercentage": 25,
+      "images": [
+        "https://m.media-amazon.com/images/I/71+0H-7-l8L._SY695_.jpg"
+      ]
+    },
+    {
+      "id": 24,
+      "title": "Ray-Ban Aviator Sunglasses",
+      "price": 8990,
+      "description": "Classic aviator sunglasses with UV protection.",
+      "category": "fashion",
+      "image": "https://m.media-amazon.com/images/I/61M6+V-3fML._SX679_.jpg",
+      "rating": {
+        "rate": 4.6,
+        "count": 340
+      },
+      "discountPercentage": 10,
+      "images": [
+        "https://m.media-amazon.com/images/I/61M6+V-3fML._SX679_.jpg"
+      ]
+    },
+    {
+      "id": 25,
+      "title": "Fastrack Analog Watch",
+      "price": 2195,
+      "description": "Trendy analog watch for cooler look.",
+      "category": "fashion",
+      "image": "https://m.media-amazon.com/images/I/61ybeKZtV+L._SX679_.jpg",
+      "rating": {
+        "rate": 4.2,
+        "count": 1200
+      },
+      "discountPercentage": 20,
+      "images": [
+        "https://m.media-amazon.com/images/I/61ybeKZtV+L._SX679_.jpg"
+      ]
+    },
+    {
+      "id": 26,
+      "title": "IKEA EKTORP Sofa",
+      "price": 29990,
+      "description": "Comfortable 3-seater sofa in beige.",
+      "category": "home",
+      "image": "https://www.ikea.com/in/en/images/products/ektorp-3-seat-sofa-hallarp-beige__0818565_pe774487_s5.jpg?f=xl",
+      "rating": {
+        "rate": 4.5,
+        "count": 110
+      },
+      "discountPercentage": 0,
+      "images": [
+        "https://www.ikea.com/in/en/images/products/ektorp-3-seat-sofa-hallarp-beige__0818565_pe774487_s5.jpg?f=xl"
+      ]
+    },
+    {
+      "id": 27,
+      "title": "Philips Air Fryer",
+      "price": 8999,
+      "description": "Healthy frying with Rapid Air technology.",
+      "category": "home",
+      "image": "https://m.media-amazon.com/images/I/61u9O27jC+L._SX679_.jpg",
+      "rating": {
+        "rate": 4.4,
+        "count": 890
+      },
+      "discountPercentage": 25,
+      "images": [
+        "https://m.media-amazon.com/images/I/61u9O27jC+L._SX679_.jpg"
+      ]
+    },
+    {
+      "id": 28,
+      "title": "Dyson V15 Detect Vacuum",
+      "price": 65900,
+      "description": "Most powerful intelligent cordless vacuum.",
+      "category": "home",
+      "image": "https://m.media-amazon.com/images/I/61+9+Vk1WJL._SX679_.jpg",
+      "rating": {
+        "rate": 4.7,
+        "count": 210
+      },
+      "discountPercentage": 10,
+      "images": [
+        "https://m.media-amazon.com/images/I/61+9+Vk1WJL._SX679_.jpg"
+      ]
+    },
+    {
+      "id": 29,
+      "title": "Milton Thermosteel Bottle",
+      "price": 899,
+      "description": "Keeps water hot or cold for 24 hours.",
+      "category": "home",
+      "image": "https://m.media-amazon.com/images/I/614XJ+gM72L._SX679_.jpg",
+      "rating": {
+        "rate": 4.3,
+        "count": 5600
+      },
+      "discountPercentage": 15,
+      "images": [
+        "https://m.media-amazon.com/images/I/614XJ+gM72L._SX679_.jpg"
+      ]
+    },
+    {
+      "id": 30,
+      "title": "Amazon Basics Office Chair",
+      "price": 7999,
+      "description": "Ergonomic high-back leather executive chair.",
+      "category": "home",
+      "image": "https://m.media-amazon.com/images/I/71Ie7a-OIAL._SX679_.jpg",
+      "rating": {
+        "rate": 4.1,
+        "count": 120
+      },
+      "discountPercentage": 30,
+      "images": [
+        "https://m.media-amazon.com/images/I/71Ie7a-OIAL._SX679_.jpg"
+      ]
+    },
+    {
+      "id": 31,
+      "title": "Samsung 4K Smart TV",
+      "price": 42990,
+      "description": "Crystal 4K Ultra HD Smart LED TV.",
+      "category": "electronics",
+      "image": "https://m.media-amazon.com/images/I/71S8qt+K8hL._SX679_.jpg",
+      "rating": {
+        "rate": 4.4,
+        "count": 3400
+      },
+      "discountPercentage": 12,
+      "images": [
+        "https://m.media-amazon.com/images/I/71S8qt+K8hL._SX679_.jpg"
+      ]
+    },
+    {
+      "id": 32,
+      "title": "Kindle Paperwhite",
+      "price": 14999,
+      "description": "Now with a 6.8” display and adjustable warm light.",
+      "category": "electronics",
+      "image": "https://m.media-amazon.com/images/I/61+9+Vk1WJL._SX679_.jpg",
+      "rating": {
+        "rate": 4.6,
+        "count": 8900
+      },
+      "discountPercentage": 5,
+      "images": [
+        "https://m.media-amazon.com/images/I/61+9+Vk1WJL._SX679_.jpg"
+      ]
+    },
+    {
+      "id": 33,
+      "title": "Fujifilm Instax Mini 12",
+      "price": 6499,
+      "description": "Instant camera for capturing memories instantly.",
+      "category": "electronics",
+      "image": "https://m.media-amazon.com/images/I/61+9+Vk1WJL._SX679_.jpg",
+      "rating": {
+        "rate": 4.5,
+        "count": 1200
+      },
+      "discountPercentage": 0,
+      "images": [
+        "https://m.media-amazon.com/images/I/61+9+Vk1WJL._SX679_.jpg"
+      ]
+    },
+    {
+      "id": 34,
+      "title": "Logitech MX Master 3S",
+      "price": 9995,
+      "description": "Performance wireless mouse for mac and windows.",
+      "category": "electronics",
+      "image": "https://m.media-amazon.com/images/I/61ni3t1ryQL._SX679_.jpg",
+      "rating": {
+        "rate": 4.8,
+        "count": 4500
+      },
+      "discountPercentage": 10,
+      "images": [
+        "https://m.media-amazon.com/images/I/61ni3t1ryQL._SX679_.jpg"
+      ]
+    }
+  ],
+  "categories": [
+    "mobiles",
+    "laptops",
+    "electronics",
+    "fashion",
+    "home"
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin User",
+      "email": "admin@shivcart.com",
+      "password": "admin"
+    },
+    {
+      "name": "Girish",
+      "email": "girish@gmail.com",
+      "password": "oYuYG7gc*P^!",
+      "id": 2
+    }
+  ],
+  "cart": []
+}

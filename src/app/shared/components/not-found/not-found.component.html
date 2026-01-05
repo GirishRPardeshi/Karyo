@@ -1,0 +1,71 @@
+<div class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 flex items-center justify-center px-4">
+  <div class="max-w-2xl mx-auto text-center">
+
+    <!-- 404 Illustration -->
+    <div class="mb-8">
+      <div class="relative">
+        <div class="w-64 h-64 mx-auto bg-gradient-to-br from-blue-400 to-purple-600 rounded-full flex items-center justify-center shadow-2xl">
+          <span class="material-symbols-outlined text-8xl text-white">search_off</span>
+        </div>
+        <div class="absolute -top-4 -right-4 w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg">
+          <span class="material-symbols-outlined text-2xl text-white">error</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Error Message -->
+    <h1 class="text-6xl font-bold text-gray-900 mb-4">404</h1>
+    <h2 class="text-3xl font-semibold text-gray-800 mb-4">Page Not Found</h2>
+    <p class="text-xl text-gray-600 mb-8 max-w-md mx-auto">
+      Oops! The page you're looking for doesn't exist. It might have been moved, deleted, or you entered the wrong URL.
+    </p>
+
+    <!-- Action Buttons -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+      <a routerLink="/" class="inline-flex items-center px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+        <span class="material-symbols-outlined mr-2">home</span>
+        Go Home
+      </a>
+      <a routerLink="/products" class="inline-flex items-center px-8 py-3 bg-white text-gray-700 font-semibold rounded-lg border-2 border-gray-300 hover:border-gray-400 transition-all duration-300 transform hover:scale-105 shadow-lg">
+        <span class="material-symbols-outlined mr-2">shopping_bag</span>
+        Browse Products
+      </a>
+    </div>
+
+    <!-- Popular Categories -->
+    <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+      <h3 class="text-xl font-semibold text-gray-900 mb-6">Popular Categories</h3>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <a routerLink="/products?category=mobiles" class="flex items-center justify-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-300">
+          <span class="material-symbols-outlined mr-2 text-blue-600">smartphone</span>
+          <span class="font-medium text-gray-700">Mobiles</span>
+        </a>
+        <a routerLink="/products?category=laptops" class="flex items-center justify-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-300">
+          <span class="material-symbols-outlined mr-2 text-green-600">laptop</span>
+          <span class="font-medium text-gray-700">Laptops</span>
+        </a>
+        <a routerLink="/products?category=fashion" class="flex items-center justify-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-300">
+          <span class="material-symbols-outlined mr-2 text-purple-600">checkroom</span>
+          <span class="font-medium text-gray-700">Fashion</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Help Section -->
+    <div class="text-center">
+      <p class="text-gray-600 mb-4">Need help finding something?</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="mailto:support@karyo.com" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+          <span class="material-symbols-outlined mr-1">email</span>
+          Contact Support
+        </a>
+        <span class="hidden sm:block text-gray-400">|</span>
+        <a routerLink="/cart" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+          <span class="material-symbols-outlined mr-1">shopping_cart</span>
+          View Cart
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>

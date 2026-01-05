@@ -1,0 +1,38 @@
+/* App-wide styles */
+nav {
+  background: #0b0b0b;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  border-radius: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background 0.3s;
+  
+}
+
+nav a:hover,
+nav a.router-link-active {
+  background: #e083ff;
+}
+
+.category-select {
+  background: #555;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.category-select option {
+  background: #333;
+}
